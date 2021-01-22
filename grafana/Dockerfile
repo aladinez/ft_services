@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.11
 RUN apk update
 RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.32-r0/glibc-2.32-r0.apk
 RUN apk add glibc-2.32-r0.apk --allow-untrusted
