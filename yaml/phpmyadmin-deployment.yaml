@@ -22,6 +22,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    metallb.universe.tf/allow-shared-ip: alae
   name: phpmyadmin-service
 spec:
   selector:
