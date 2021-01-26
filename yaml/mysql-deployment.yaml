@@ -17,7 +17,7 @@ spec:
         image: mysql-image
         imagePullPolicy: Never
         ports:
-        - containerPort: 8080
+        - containerPort: 3306
 ---
 apiVersion: v1
 kind: Service
@@ -28,4 +28,4 @@ spec:
     run: mysql-dep
   ports:
     - port: 8080
-      targetPort: 8080
+      targetPort: 3306
