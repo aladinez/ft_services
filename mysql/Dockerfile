@@ -9,6 +9,7 @@ RUN /etc/init.d/mariadb setup
 RUN rm /etc/my.cnf.d/mariadb-server.cnf
 COPY mariadb-server.cnf /etc/my.cnf.d/
 
+COPY db_wordpress.sql .
 COPY run.sh .
 COPY mysql.sh .
 
