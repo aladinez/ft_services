@@ -5,6 +5,10 @@ RUN apk add openrc vim
 RUN rc-status -a
 RUN touch /run/openrc/softlevel
 RUN apk add nginx
+RUN mkdir /etc/nginx/ssl
+RUN chmod 777 /etc/nginx/ssl
+COPY nginx.key etc/nginx/ssl/
+COPY nginx.crt etc/nginx/ssl/
 COPY run.sh .
 COPY default.conf .
 ENTRYPOINT sh run.sh && tail -f /dev/null

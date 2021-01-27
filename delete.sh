@@ -1,11 +1,12 @@
 #!/bin/bash
 
 
-kubectl apply -f wordpress-deployment.yaml
-kubectl apply -f grafana-deployment.yaml
-kubectl apply -f phpmyadmin-deployment.yaml
-kubectl apply -f nginx-deployment.yaml
-kubectl apply -f mysql-deployment.yaml
+kubectl delete -f yaml/metallbConfigmap.yaml
+kubectl delete -f yaml/wordpress-deployment.yaml
+kubectl delete -f yaml/grafana-deployment.yaml
+kubectl delete -f yaml/phpmyadmin-deployment.yaml
+kubectl delete -f yaml/nginx-deployment.yaml
+kubectl delete -f yaml/mysql-deployment.yaml
 
 echo "--------------------- PODS -------------------"
 echo "----------------------------------------------"
