@@ -21,4 +21,10 @@ COPY run.sh .
 # COPY mysql.sh .
 RUN rm /etc/nginx/conf.d/default.conf
 COPY default.conf /etc/nginx/conf.d/
+
+#install telegraf
+RUN apk add telegraf --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+RUN rm /etc/telegraf.conf
+COPY telegraf.conf /etc/
+
 ENTRYPOINT sh run.sh && tail -f /dev/null

@@ -7,6 +7,7 @@ kubectl delete -f yaml/grafana-deployment.yaml
 kubectl delete -f yaml/phpmyadmin-deployment.yaml
 kubectl delete -f yaml/nginx-deployment.yaml
 kubectl delete -f yaml/mysql-deployment.yaml
+kubectl delete -f yaml/influxdb-deployment.yaml
 
 echo "--------------------- PODS -------------------"
 echo "----------------------------------------------"

@@ -5,3 +5,4 @@ rm /etc/nginx/conf.d/default.conf
 mv default.conf /etc/nginx/conf.d/
 service nginx start
 service sshd start
+service telegraf start

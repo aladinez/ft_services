@@ -21,6 +21,10 @@ RUN rm -rf php*.tar.gz
 RUN mkdir -p /var/lib/phpmyadmin/tmp
 RUN chmod 777 /var/lib/phpmyadmin/tmp
 
+#install telegraf
+RUN apk add telegraf --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+RUN rm /etc/telegraf.conf
+COPY telegraf.conf /etc/
 
 COPY config.inc.php /var/www/phpmyadmin/
 ENTRYPOINT sh run.sh && tail -f /dev/null
