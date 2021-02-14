@@ -10,8 +10,8 @@ RUN apk add vsftpd
 RUN rm /etc/vsftpd/vsftpd.conf
 COPY srcs/vsftpd.conf /etc/vsftpd/
 
-COPY srcs/password.txt .
-RUN passwd < /password.txt
+# COPY srcs/password.txt .
+# RUN passwd < /password.txt
 
 COPY srcs/run.sh .
 ENTRYPOINT sh run.sh && tail -f dev/null

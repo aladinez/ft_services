@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: ftps-dep
+      app: ftps-dep
   replicas: 1
   template:
     metadata:
       labels:
-        run: ftps-dep
+        app: ftps-dep
     spec:
       containers:
       - name: ftps-container
@@ -29,15 +29,15 @@ metadata:
   name: ftps-service
 spec:
   selector:
-    run: ftps-dep
+    app: ftps-dep
   type: LoadBalancer
   ports:
     - port: 21
       targetPort: 21
-      name: connectionPort
+      name: connectionport
     - port: 30001
       targetPort: 30001
-      name: dataTransPort
+      name: datatransport
     - port: 30002
       targetPort: 30002
-      name: dataTransPort
+      name: datatransport2

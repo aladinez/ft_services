@@ -14,6 +14,7 @@ docker build -t wordpress-image wordpress --no-cache
 docker build -t phpmyadmin-image phpmyadmin --no-cache
 docker build -t mysql-image mysql --no-cache
 docker build -t influxdb-image influxdb --no-cache
+docker build -t ftps-image ftps --no-cache
 
 sed -i '' s/$(minikube ip)/ALADINLEPRINCE/g mysql/db_wordpress.sql
 sed -i '' s/$(minikube ip)/ALADINLEPRINCE/g yaml/metallbConfigmap.yaml
