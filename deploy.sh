@@ -12,6 +12,7 @@ kubectl apply -f yaml/grafana-deployment.yaml
 kubectl apply -f yaml/phpmyadmin-deployment.yaml
 kubectl apply -f yaml/nginx-deployment.yaml
 kubectl apply -f yaml/mysql-deployment.yaml
+kubectl apply -f yaml/ftps-deployment.yaml
 
 
 sed -i '' s/$(minikube ip)/ALADINLEPRINCE/g yaml/metallbConfigmap.yaml
