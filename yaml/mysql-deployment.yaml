@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  labels:
-    run: mysql-dep
-  name: mysql-pvc
+  name: mysql-pv-claim
 spec:
   accessModes:
   - ReadWriteOnce
@@ -25,19 +23,19 @@ spec:
       labels:
         run: mysql-dep
     spec:
-      volumes:
-        - name: mysql-volume
-          persistentVolumeClaim:
-            claimName: mysql-pvc
       containers:
       - name: mysql-container
         image: mysql-image
         imagePullPolicy: Never
-        volumeMounts:
-        - mountPath: "/var/lib/mysql/"
-          name: mysql-volume
         ports:
         - containerPort: 3306
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
 ---
 apiVersion: v1
 kind: Service

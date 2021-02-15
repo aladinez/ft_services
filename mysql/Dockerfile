@@ -6,7 +6,7 @@ RUN apk add openrc vim
 RUN mkdir /run/openrc && touch /run/openrc/softlevel
 RUN apk add mysql mysql-client
 RUN /etc/init.d/mariadb setup
-RUN mkdir -p /var/lib/mysql
+# RUN mkdir /MYSQL
 RUN rm /etc/my.cnf.d/mariadb-server.cnf
 COPY mariadb-server.cnf /etc/my.cnf.d/
 
