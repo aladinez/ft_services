@@ -13,8 +13,8 @@ spec:
         run: phpmyadmin-dep
     spec:
       containers:
-      - name: phpmyadmin-container
-        image: phpmyadmin-image
+      - name: phpmyadmin
+        image: phpmyadmin
         imagePullPolicy: Never
         ports:
         - containerPort: 5000

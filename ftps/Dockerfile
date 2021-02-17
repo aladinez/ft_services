@@ -13,6 +13,11 @@ COPY srcs/vsftpd.conf /etc/vsftpd/
 # COPY srcs/password.txt .
 # RUN passwd < /password.txt
 
+#install telegraf
+RUN apk add telegraf --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+RUN rm /etc/telegraf.conf
+COPY srcs/telegraf.conf /etc/
+
 COPY srcs/run.sh .
 ENTRYPOINT sh run.sh && tail -f dev/null
 

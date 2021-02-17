@@ -13,8 +13,8 @@ spec:
         run: nginx-dep
     spec:
       containers:
-      - name: nginx-container
-        image: nginx-image
+      - name: nginx
+        image: nginx
         imagePullPolicy: Never
         ports:
         - containerPort: 80

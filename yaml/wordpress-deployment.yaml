@@ -13,8 +13,8 @@ spec:
         run: wordpress-dep
     spec:
       containers:
-      - name: wordpress-container
-        image: wordpress-image
+      - name: wordpress
+        image: wordpress
         imagePullPolicy: Never
         ports:
         - containerPort: 5050

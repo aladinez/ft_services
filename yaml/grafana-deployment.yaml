@@ -13,8 +13,8 @@ spec:
         run: grafana-dep
     spec:
       containers:
-      - name: grafana-container
-        image: grafana-image
+      - name: grafana
+        image: grafana
         imagePullPolicy: Never
         ports:
         - containerPort: 3000

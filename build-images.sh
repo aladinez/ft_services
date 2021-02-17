@@ -8,13 +8,13 @@ sed -i '' s/ALADINLEPRINCE/$(minikube ip)/g influxdb/telegraf.conf
 sed -i '' s/ALADINLEPRINCE/$(minikube ip)/g ftps/srcs/vsftpd.conf
 
 
-docker build -t nginx-image nginx --no-cache
-docker build -t grafana-image grafana --no-cache
-docker build -t wordpress-image wordpress --no-cache
-docker build -t phpmyadmin-image phpmyadmin --no-cache
-docker build -t mysql-image mysql --no-cache
-docker build -t influxdb-image influxdb --no-cache
-docker build -t ftps-image ftps --no-cache
+docker build -t nginx nginx --no-cache
+docker build -t grafana grafana --no-cache
+docker build -t wordpress wordpress --no-cache
+docker build -t phpmyadmin phpmyadmin --no-cache
+docker build -t mysql mysql --no-cache
+docker build -t influxdb influxdb --no-cache
+docker build -t ftps ftps --no-cache
 
 sed -i '' s/$(minikube ip)/ALADINLEPRINCE/g mysql/db_wordpress.sql
 sed -i '' s/$(minikube ip)/ALADINLEPRINCE/g yaml/metallbConfigmap.yaml

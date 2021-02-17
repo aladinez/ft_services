@@ -28,7 +28,7 @@ spec:
           persistentVolumeClaim:
             claimName: influxdb-pvc
       containers:
-      - image: influxdb-image
+      - image: influxdb
         imagePullPolicy: Never
         name: influxdb
         volumeMounts:

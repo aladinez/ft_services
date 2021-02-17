@@ -6,3 +6,4 @@ minikube start --vm-driver=virtualbox
 eval $(minikube docker-env)
 sh build-images.sh
 sh deploy.sh
+minikube dashboard &
