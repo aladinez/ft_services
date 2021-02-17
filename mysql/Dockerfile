@@ -3,9 +3,9 @@ FROM alpine:3.11
 RUN apk update
 # RUN apk add nginx
 RUN apk add openrc vim
-RUN mkdir /run/openrc && touch /run/openrc/softlevel
+RUN mkdir -p /run/openrc && touch /run/openrc/softlevel
 RUN apk add mysql mysql-client
-RUN /etc/init.d/mariadb setup
+# RUN /etc/init.d/mariadb setup
 # RUN mkdir -p /var/lib/mysql /run/mysqld
 RUN rm /etc/my.cnf.d/mariadb-server.cnf
 COPY mariadb-server.cnf /etc/my.cnf.d/

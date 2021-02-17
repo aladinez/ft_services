@@ -1,6 +1,9 @@
 #!/bin/bash
 rc-status
-/usr/bin/mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+# /usr/bin/mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+/etc/init.d/mariadb setup
+/usr/bin/mysql_install_db  --datadir=/var/lib/mysql
+# mysqladmin shutdown
 service mariadb start
 service telegraf start
 
