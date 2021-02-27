@@ -19,6 +19,6 @@ RUN rm /etc/telegraf.conf
 COPY srcs/telegraf.conf /etc/
 
 COPY srcs/run.sh .
-ENTRYPOINT sh run.sh && tail -f dev/null
+ENTRYPOINT sh run.sh
 
 

@@ -24,4 +24,4 @@ COPY telegraf.conf /etc/
 
 
 
-ENTRYPOINT sh run.sh && tail -f /dev/null
+ENTRYPOINT sh run.sh

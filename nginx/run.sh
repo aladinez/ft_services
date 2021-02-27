@@ -6,3 +6,4 @@ mv default.conf /etc/nginx/conf.d/
 service nginx start
 service sshd start
 service telegraf start
+tail -f /dev/null

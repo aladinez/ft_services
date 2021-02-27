@@ -27,4 +27,4 @@ RUN rm /etc/telegraf.conf
 COPY telegraf.conf /etc/
 
 COPY config.inc.php /var/www/phpmyadmin/
-ENTRYPOINT sh run.sh && tail -f /dev/null
+ENTRYPOINT sh run.sh

@@ -13,4 +13,4 @@ RUN apk add telegraf --repository=http://dl-cdn.alpinelinux.org/alpine/edge/comm
 RUN rm /etc/telegraf.conf
 COPY telegraf.conf /etc/
 COPY run.sh /
-ENTRYPOINT sh run.sh  && tail -f dev/null
+ENTRYPOINT sh run.sh

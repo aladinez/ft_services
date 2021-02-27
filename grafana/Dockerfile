@@ -22,4 +22,4 @@ COPY telegraf.conf /etc/
 COPY grafana.db /grafana/data/
 
 COPY run.sh /
-ENTRYPOINT sh run.sh && tail -f dev/null
+ENTRYPOINT sh run.sh
