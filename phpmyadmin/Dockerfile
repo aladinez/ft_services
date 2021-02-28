@@ -2,7 +2,7 @@ FROM alpine:3.11
 
 RUN apk update
 RUN apk add nginx
-RUN apk add openrc vim
+RUN apk add openrc vim bash
 RUN mkdir /run/openrc && touch /run/openrc/softlevel
 # RUN apk add mysql mysql-client
 RUN apk add mysql-client
@@ -25,6 +25,8 @@ RUN chmod 777 /var/lib/phpmyadmin/tmp
 RUN apk add telegraf --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 RUN rm /etc/telegraf.conf
 COPY telegraf.conf /etc/
+
+COPY health.sh /
 
 COPY config.inc.php /var/www/phpmyadmin/
 ENTRYPOINT sh run.sh
