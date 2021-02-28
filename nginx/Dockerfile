@@ -1,7 +1,7 @@
 FROM alpine:3.11
 
 RUN apk update
-RUN apk add openrc vim openssh
+RUN apk add openrc vim openssh bash
 RUN rc-status -a
 RUN touch /run/openrc/softlevel
 RUN apk add nginx
@@ -20,7 +20,7 @@ RUN rm /etc/telegraf.conf
 COPY telegraf.conf /etc/
 
 
-
+COPY health.sh /
 
 
 
