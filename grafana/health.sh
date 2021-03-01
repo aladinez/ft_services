@@ -1,7 +1,8 @@
 #!/bin/bash
 
 while [ True ]; do
-        if [[ ! `ps` =~ "nginx" ]] || [[ ! `ps` =~ "telegraf" ]] || [[ ! `ps` =~ "php-fpm" ]]; then
+        val=`ps`
+        if [[ "$val" != *telegraf* ]] || [[ "$val" != *grafana* ]]; then
                 exit 1
         else
                 exit 0

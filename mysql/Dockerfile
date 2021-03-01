@@ -2,7 +2,7 @@ FROM alpine:3.11
 
 RUN apk update
 # RUN apk add nginx
-RUN apk add openrc vim
+RUN apk add openrc vim bash
 RUN mkdir -p /run/openrc && touch /run/openrc/softlevel
 RUN apk add mysql mysql-client
 # RUN /etc/init.d/mariadb setup
@@ -20,5 +20,8 @@ COPY telegraf.conf /etc/
 COPY db_wordpress.sql .
 COPY run.sh .
 COPY mysql.sh .
+
+COPY health.sh /
+
 
 ENTRYPOINT sh run.sh

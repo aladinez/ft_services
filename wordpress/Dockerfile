@@ -2,7 +2,7 @@ FROM alpine:3.11
 
 RUN apk update
 RUN apk add nginx
-RUN apk add openrc vim
+RUN apk add openrc vim bash
 RUN mkdir /run/openrc && touch /run/openrc/softlevel
 # RUN apk add mysql mysql-client
 # RUN /etc/init.d/mariadb setup
@@ -26,5 +26,8 @@ COPY default.conf /etc/nginx/conf.d/
 RUN apk add telegraf --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 RUN rm /etc/telegraf.conf
 COPY telegraf.conf /etc/
+
+COPY health.sh /
+
 
 ENTRYPOINT sh run.sh
