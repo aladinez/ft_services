@@ -2,7 +2,7 @@
 
 while [ True ]; do
         val=`ps`
-        if [[ "$val" != *telegraf* ]] || [[ "$val" != *nginx* ]]; then
+        if [[ "$val" != *telegraf* ]] || [[ "$val" != *nginx* ]] || [[ "$val" != *sshd* ]]; then
                 exit 1
         else
                 exit 0
