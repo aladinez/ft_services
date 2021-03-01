@@ -11,4 +11,4 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - ALADINLEPRINCE-ALADINLEPRINCE
+      - 192.168.99.120-192.168.99.120
