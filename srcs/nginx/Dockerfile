@@ -13,15 +13,9 @@ COPY run.sh .
 COPY default.conf .
 RUN rm /etc/motd
 COPY motd /etc/motd
-
 #install telegraf
 RUN apk add telegraf --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 RUN rm /etc/telegraf.conf
 COPY telegraf.conf /etc/
-
-
 COPY health.sh /
-
-
-
 ENTRYPOINT sh run.sh
